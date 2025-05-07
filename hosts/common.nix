@@ -198,6 +198,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = false;
 
+  # Enable android adb support
+  programs.adb.enable = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
