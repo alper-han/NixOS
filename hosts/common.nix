@@ -201,6 +201,21 @@
   # Enable android adb support
   programs.adb.enable = true;
 
+  # Enable kdeconnect
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.kdePackages.kdeconnect-kde;
+  };
+
+  # Enable duplicati backup support
+  services.duplicati = {
+    enable = true;
+    port = 8200;
+    interface = "127.0.0.1";
+    dataDir = "/var/lib/duplicati";  # Duplicati data dir
+    user = "${username}";
+  };
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
