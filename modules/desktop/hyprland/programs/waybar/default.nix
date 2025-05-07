@@ -176,14 +176,14 @@
             };
 
             "cpu" = {
-              interval = 10;
+              interval = 5;
               format = "󰍛 {usage}%";
               format-alt = "{icon0}{icon1}{icon2}{icon3}";
               format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
             };
 
             "memory" = {
-              interval = 30;
+              interval = 5;
               format = "󰾆 {percentage}%";
               format-alt = "󰾅 {used}GB";
               max-length = 10;
@@ -199,13 +199,14 @@
             };
 
             "network" = {
+              interval = 1;
               # on-click = "nm-connection-editor";
               # "interface" = "wlp2*"; # (Optional) To force the use of this interface
-              format-wifi = "󰤨 Wi-Fi";
-              # format-wifi = " {bandwidthDownBits}  {bandwidthUpBits}";
+              # format-wifi = "󰤨 Wi-Fi";
+              format-wifi = " {bandwidthDownBits}  {bandwidthUpBits}";
               # format-wifi = "󰤨 {essid}";
-              format-ethernet = "󱘖 Wired";
-              # format-ethernet = " {bandwidthDownBits}  {bandwidthUpBits}";
+              # format-ethernet = "󱘖 Wired";
+              format-ethernet = " {bandwidthDownBits}  {bandwidthUpBits}";
               format-linked = "󱘖 {ifname} (No IP)";
               format-disconnected = "󰤮 Off";
               # format-disconnected = "󰤮 Disconnected";
