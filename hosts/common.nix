@@ -177,7 +177,7 @@
         ReconnectAttempts = 30;
         ReconnectIntervals = 1;
       };
-      Policy = { AutoEnable = "true"; };
+      Policy = { AutoEnable = true; };
     };
   };
 
