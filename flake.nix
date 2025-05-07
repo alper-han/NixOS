@@ -49,7 +49,7 @@
       # User configuration
       username = "error"; # automatically set with install.sh and live-install.sh
       editor = "nixvim"; # nixvim, vscode, nvchad, neovim, emacs (WIP)
-      browser = "floorp"; # firefox, floorp, zen
+      browser = "zen"; # firefox, floorp, zen
       terminal = "kitty"; # kitty, alacritty, wezterm
       terminalFileManager = "yazi"; # yazi or lf
       sddmTheme = "purple_leaves"; # astronaut, black_hole, purple_leaves, jake_the_dog, hyprland_kath
@@ -58,11 +58,11 @@
       # System configuration
       videoDriver = "nvidia"; # CHOOSE YOUR GPU DRIVERS (nvidia or amdgpu or intel) THIS IS IMPORTANT
       hostname = "NixOS"; # CHOOSE A HOSTNAME HERE
-      locale = "en_GB.UTF-8"; # CHOOSE YOUR LOCALE
-      timezone = "Europe/London"; # CHOOSE YOUR TIMEZONE
-      kbdLayout = "gb"; # CHOOSE YOUR KEYBOARD LAYOUT
-      kbdVariant = "extd"; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
-      consoleKeymap = "uk"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
+      locale = "en_US.UTF-8"; # CHOOSE YOUR LOCALE
+      timezone = "Europe/Istanbul"; # CHOOSE YOUR TIMEZONE
+      kbdLayout = "tr"; # CHOOSE YOUR KEYBOARD LAYOUT
+      kbdVariant = ""; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
+      consoleKeymap = "trq"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
     };
 
     systems = [
