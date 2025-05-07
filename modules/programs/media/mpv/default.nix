@@ -115,6 +115,10 @@
           input-default-bindings = false;
         };
       };
+      home.packages = with pkgs; [
+        #plex-mpv-shim
+        jellyfin-mpv-shim
+      ];
     })
   ];
 }
