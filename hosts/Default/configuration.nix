@@ -43,6 +43,7 @@
     # ../../modules/programs/misc/nix-ld
      ../../modules/programs/misc/virt-manager
     # ../../modules/programs/misc/lact # gpu power and fan control (WIP)
+     ../../modules/programs/mypackages
   ];
 
   # Home-manager config
