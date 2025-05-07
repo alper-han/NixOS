@@ -149,7 +149,8 @@
             };
 
             "clock" = {
-              format = "{:%a %d %b %R}";
+              interval = 1;
+              format = "{:%a %d %b %H:%M:%S}";
               # format = "{:%R 󰃭 %d·%m·%y}";
               format-alt = "{:%I:%M %p}";
               tooltip-format = "<tt>{calendar}</tt>";
