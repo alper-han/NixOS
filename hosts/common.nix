@@ -162,7 +162,20 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-    settings.General.Experimental = true;
+    settings = {
+      General = {
+        Name = "NixOS";
+        Enable = "Source,Sink,Media,Socket";
+        ControllerMode = "dual";
+        FastConnectable = true;
+        Experimental = true;
+        KernelExperimental = true;
+        JustWorksRepairing = "always";
+        ReconnectAttempts = 30;
+        ReconnectIntervals = 1;
+      };
+      Policy = { AutoEnable = "true"; };
+    };
   };
 
   # Enable networking
