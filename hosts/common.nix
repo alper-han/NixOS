@@ -69,6 +69,9 @@
         htop
         nix-prefetch-scripts
         microfetch
+        fastfetch
+        mtr
+        ffmpeg-full
         ripgrep
         tldr
         unzip
