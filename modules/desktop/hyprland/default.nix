@@ -217,7 +217,8 @@
           render = {
             explicit_sync = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
             explicit_sync_kms = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
-            direct_scanout = false; # Set to true for less Fullscreen game lag (may cause glitches).
+            direct_scanout = true; # Set to true for less Fullscreen game lag (may cause glitches).
+            cm_fs_passthrough = true;
           };
           misc = {
             disable_hyprland_logo = true;
@@ -486,22 +487,21 @@
           # Easily plug in any monitor
           monitor=,preferred,auto,1
 
-          # 1080p-HDR monitor on the left, 4K-HDR monitor in the middle and 1080p vertical monitor on the right.
-          monitor=desc:BNQ BenQ EW277HDR 99J01861SL0,preferred,-1920x0,1,bitdepth,8
-          monitor=desc:BNQ BenQ EL2870U PCK00489SL0,3840x2160@60,0x0,2,bitdepth,10
-          monitor=desc:BNQ BenQ xl2420t 99D06760SL0,preferred,1920x0,1,transform,1 # 5 for fipped
+	  #discord screen share broken,10 bit
+          monitor=desc:LG Electronics LG ULTRAGEAR 104NTVS42871,2560x1440@144.0,0x0,1,bitdepth,8,cm,auto
+          monitor=desc:LG Electronics LG ULTRAGEAR 104NTNH42959,2560x1440@144.0,2560x0,1,bitdepth,8,cm,auto
 
           # Binds workspaces to my monitors only (find desc with: hyprctl monitors)
-          workspace=1,monitor:desc:BNQ BenQ EL2870U PCK00489SL0,default:true
-          workspace=2,monitor:desc:BNQ BenQ EL2870U PCK00489SL0
-          workspace=3,monitor:desc:BNQ BenQ EL2870U PCK00489SL0
-          workspace=4,monitor:desc:BNQ BenQ EL2870U PCK00489SL0
-          workspace=5,monitor:desc:BNQ BenQ EW277HDR 99J01861SL0,default:true
-          workspace=6,monitor:desc:BNQ BenQ EW277HDR 99J01861SL0
-          workspace=7,monitor:desc:BNQ BenQ EW277HDR 99J01861SL0
-          workspace=8,monitor:desc:BNQ BenQ xl2420t 99D06760SL0,default:true
-          workspace=9,monitor:desc:BNQ BenQ xl2420t 99D06760SL0
-          workspace=10,monitor:desc:BNQ BenQ EL2870U PCK00489SL0
+          workspace=1,monitor:desc:LG Electronics LG ULTRAGEAR 104NTVS42871,default:true
+          workspace=2,monitor:desc:LG Electronics LG ULTRAGEAR 104NTNH42959,default:true
+          workspace=3,monitor:desc:LG Electronics LG ULTRAGEAR 104NTVS42871
+          workspace=4,monitor:desc:LG Electronics LG ULTRAGEAR 104NTNH42959
+          workspace=5,monitor:desc:LG Electronics LG ULTRAGEAR 104NTVS42871
+          workspace=6,monitor:desc:LG Electronics LG ULTRAGEAR 104NTNH42959
+          workspace=7,monitor:desc:LG Electronics LG ULTRAGEAR 104NTVS42871
+          workspace=8,monitor:desc:LG Electronics LG ULTRAGEAR 104NTNH42959
+          workspace=9,monitor:desc:LG Electronics LG ULTRAGEAR 104NTVS42871
+          workspace=10,monitor:desc:LG Electronics LG ULTRAGEAR 104NTNH42959
         '';
       };
     })
