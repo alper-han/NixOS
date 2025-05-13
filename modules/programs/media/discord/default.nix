@@ -49,22 +49,22 @@
           AccountPanelServerProfile.enabled = false;
           AlwaysAnimate.enabled = false;
           AlwaysExpandRoles.enabled = false;
-          AlwaysTrust.enabled = true;
-          AnonymiseFileNames.enabled = false;
+          AlwaysTrust.enabled = false;
+          AnonymiseFileNames.enabled = true;
           AppleMusicRichPresence.enabled = false;
           BANger.enabled = false;
           BetterFolders.enabled = false;
-          BetterGifAltText.enabled = false;
+          BetterGifAltText.enabled = true;
           BetterGifPicker.enabled = false;
           BetterNotesBox.enabled = false;
           BetterRoleContext.enabled = false;
           BetterRoleDot.enabled = false;
-          BetterSessions.enabled = false;
+          BetterSessions.enabled = true;
           BetterSettings.enabled = false;
           BetterUploadButton.enabled = false;
-          BiggerStreamPreview.enabled = false;
+          BiggerStreamPreview.enabled = true;
           BlurNSFW.enabled = false;
-          CallTimer.enabled = false;
+          CallTimer.enabled = true;
           ClearURLs.enabled = true;
           ClientTheme.enabled = false;
           ColorSighted.enabled = false;
@@ -82,16 +82,16 @@
           DisableCallIdle.enabled = false;
           DontRoundMyTimestamps.enabled = false;
           EmoteCloner.enabled = true;
-          Experiments.enabled = true;
+          Experiments.enabled = false;
           F8Break.enabled = false;
           FakeNitro.enabled = true;
           FakeProfileThemes.enabled = false;
           FavoriteEmojiFirst.enabled = false;
           FavoriteGifSearch.enabled = false;
           FixCodeblockGap.enabled = false;
-          FixImagesQuality.enabled = false;
+          FixImagesQuality.enabled = true;
           FixSpotifyEmbeds.enabled = false;
-          FixYoutubeEmbeds.enabled = false;
+          FixYoutubeEmbeds.enabled = true;
           ForceOwnerCrown.enabled = false;
           FriendInvites.enabled = false;
           FriendsSince.enabled = false;
@@ -109,7 +109,7 @@
           KeepCurrentChannel.enabled = false;
           LastFMRichPresence.enabled = false;
           LoadingQuotes.enabled = false;
-          MemberCount.enabled = false;
+          MemberCount.enabled = true;
           MentionAvatars.enabled = false;
           MessageClickActions.enabled = false;
           MessageLatency.enabled = false;
@@ -169,7 +169,7 @@
           ReadAllNotificationsButton.enabled = false;
           RelationshipNotifier.enabled = false;
           ReplaceGoogleSearch = {
-            enabled = true;
+            enabled = false;
             customEngineName = "Startpage";
             customEngineURL = "https://www.startpage.com/sp/search?prfe=c602752472dd4a3d8286a7ce441403da08e5c4656092384ed3091a946a5a4a4c99962d0935b509f2866ff1fdeaa3c33a007d4d26e89149869f2f7d0bdfdb1b51aa7ae7f5f17ff4a233ff313d&query=";
           };
@@ -187,7 +187,7 @@
           ShowAllMessageButtons.enabled = false;
           ShowConnections.enabled = false;
           ShowHiddenChannels = {
-            enabled = false;
+            enabled = true;
             hideUnreads = true;
             showMode = 1;
           };
@@ -199,11 +199,11 @@
             enabled = true;
             showIcon = true;
             contextMenu = true;
-            isEnabled = false; # Enable/Disable by default
+            isEnabled = true; # Enable/Disable by default
           };
           SortFriendRequests.enabled = false;
           SpotifyControls.enabled = false;
-          SpotifyCrack.enabled = true;
+          SpotifyCrack.enabled = false;
           SpotifyShareCommands.enabled = false;
           StartupTimings.enabled = false;
           StickerPaste.enabled = false;
@@ -212,17 +212,17 @@
           TextReplace.enabled = false;
           ThemeAttributes.enabled = false;
           Translate.enabled = false;
-          TypingIndicator.enabled = false;
-          TypingTweaks.enabled = false;
+          TypingIndicator.enabled = true;
+          TypingTweaks.enabled = true;
           Unindent.enabled = false;
           UnlockedAvatarZoom.enabled = false;
           UnsuppressEmbeds.enabled = false;
           UserMessagesPronouns.enabled = false;
-          UserVoiceShow.enabled = false;
+          UserVoiceShow.enabled = true;
           USRBG.enabled = false;
-          ValidReply.enabled = false;
-          ValidUser.enabled = false;
-          VoiceChatDoubleClick.enabled = false;
+          ValidReply.enabled = true;
+          ValidUser.enabled = true;
+          VoiceChatDoubleClick.enabled = true;
           VcNarrator.enabled = false;
           VencordToolbox.enabled = false;
           ViewIcons.enabled = false;
@@ -230,7 +230,7 @@
           VoiceDownload.enabled = false;
           VoiceMessages.enabled = false;
           VolumeBooster.enabled = false;
-          WhoReacted.enabled = false;
+          WhoReacted.enabled = true;
           XSOverlay.enabled = false;
           YoutubeAdblock.enabled = true;
           NoTrack.enabled = true;
