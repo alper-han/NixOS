@@ -25,8 +25,8 @@
 
             modules-left = ["hyprland/workspaces" "cava"];
             # modules-center = ["clock" "custom/notification"];
-            modules-center = ["idle_inhibitor" "clock"];
-            modules-right = ["custom/gpuinfo" "cpu" "memory" "backlight" "pulseaudio" "bluetooth" "network" "tray" "battery"];
+            modules-center = ["mpris" "idle_inhibitor" "clock"];
+            modules-right = ["network" "custom/gpuinfo" "cpu" "memory" "backlight" "pulseaudio" "pulseaudio#microphone" "bluetooth" "tray" "battery"];
 
             "custom/notification" = {
               tooltip = false;
@@ -84,7 +84,8 @@
               format = "{}";
             };
             "mpris" = {
-              format = "{player_icon} {title} - {artist}";
+              # format = "{player_icon} {title} - {artist}";
+              format = "{player_icon} {title}";
               format-paused = "{status_icon} <i>{title} - {artist}</i>";
               player-icons = {
                 default = "▶";
@@ -100,8 +101,8 @@
                 paused = "⏸";
                 playing = "";
               };
-              ignored-players = ["firefox" "chromium"];
-              max-length = 30;
+              # ignored-players = ["firefox" "chromium"];
+              max-length = 40;
             };
             "temperature" = {
               hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
@@ -125,7 +126,7 @@
             };
 
             "hyprland/window" = {
-              format = "  {}";
+              format = " {}";
               separate-outputs = true;
               rewrite = {
                 "harvey@hyprland =(.*)" = "$1 ";
@@ -138,7 +139,7 @@
                 "(.*)Spotify Premium" = "Spotify 󰓇";
                 "(.*)Steam" = "Steam 󰓓";
               };
-              max-length = 1000;
+              max-length = 75;
             };
 
             "idle_inhibitor" = {
@@ -151,9 +152,9 @@
 
             "clock" = {
               interval = 1;
-              format = "{:%a %d %b %H:%M:%S}";
+              format = "{:%d/%m %H:%M:%S}";
               # format = "{:%R 󰃭 %d·%m·%y}";
-              format-alt = "{:%I:%M %p}";
+              format-alt = "{:%H:%M:%S}";
               tooltip-format = "<tt>{calendar}</tt>";
               calendar = {
                 mode = "month";
@@ -243,11 +244,10 @@
 
             "pulseaudio#microphone" = {
               format = "{format_source}";
-              format-source = " {volume}%";
+              format-source = "";
               format-source-muted = "";
-              on-click = "pavucontrol -t 4";
+              on-click = "pamixer --default-source -t";
               tooltip-format = "{format_source} {source_desc} // {source_volume}%";
-              scroll-step = 5;
             };
 
             "tray" = {
