@@ -216,8 +216,8 @@
           render = {
             explicit_sync = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
             explicit_sync_kms = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
-            direct_scanout = true; # Set to true for less Fullscreen game lag (may cause glitches).
-            cm_fs_passthrough = true;
+            direct_scanout = 1; # Set to true for less Fullscreen game lag (may cause glitches).
+            cm_fs_passthrough = 1;
           };
           misc = {
             disable_hyprland_logo = true;
