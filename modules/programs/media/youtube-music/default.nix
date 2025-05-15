@@ -55,6 +55,7 @@
           equalizer.enabled = false;
           ambient-mode.enabled = false;
           amuse.enabled = false;
+          quality-changer.enabled = true;
           visualizer = {
             enabled = false;
             type = "vudio";
