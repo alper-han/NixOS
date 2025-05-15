@@ -59,7 +59,6 @@
       # Packages that don't require configuration. If you're looking to configure a program see the /modules dir
       home.packages = with pkgs; [
         # Applications
-        #kate
 
         # Terminal
         fzf
@@ -68,9 +67,7 @@
         gh
         htop
         nix-prefetch-scripts
-        microfetch
         fastfetch
-        mtr
         ffmpeg-full
         ripgrep
         tldr
@@ -302,7 +299,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
+  programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
