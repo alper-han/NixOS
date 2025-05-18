@@ -152,7 +152,7 @@
 
             "clock" = {
               interval = 1;
-              format = "{:%d/%m %H:%M:%S}";
+              format = "{:%d/%m %H:%M}";
               # format = "{:%R 󰃭 %d·%m·%y}";
               format-alt = "{:%H:%M:%S}";
               tooltip-format = "<tt>{calendar}</tt>";
@@ -200,7 +200,7 @@
             };
 
             "network" = {
-              interval = 1;
+              interval = 2;
               # on-click = "nm-connection-editor";
               # "interface" = "wlp2*"; # (Optional) To force the use of this interface
               # format-wifi = "󰤨 Wi-Fi";

@@ -69,7 +69,7 @@
           Decor.enabled = false;
           DisableCallIdle.enabled = false;
           DontRoundMyTimestamps.enabled = false;
-          EmoteCloner.enabled = true;
+          EmoteCloner.enabled = false;
           Experiments.enabled = false;
           F8Break.enabled = false;
           FakeNitro.enabled = true;
@@ -175,7 +175,7 @@
           ShowAllMessageButtons.enabled = false;
           ShowConnections.enabled = false;
           ShowHiddenChannels = {
-            enabled = true;
+            enabled = false;
             hideUnreads = true;
             showMode = 1;
           };

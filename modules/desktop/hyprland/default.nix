@@ -216,8 +216,11 @@
           render = {
             explicit_sync = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
             explicit_sync_kms = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
-            direct_scanout = 1; # Set to true for less Fullscreen game lag (may cause glitches).
-            cm_fs_passthrough = 1;
+            direct_scanout = 2; # Set to true for less Fullscreen game lag (may cause glitches).
+            cm_fs_passthrough = 2;
+          };
+          experimental = {
+            xx_color_management_v4 = true;
           };
           misc = {
             disable_hyprland_logo = true;
@@ -377,7 +380,7 @@
               "$mainMod, G, exec, ${./scripts/rofi.sh} games" # game launcher
               "$mainMod ALT, G, exec, ${./scripts/gamemode.sh}" # disable hypr effects for gamemode
               "$mainMod, V, exec, ${./scripts/ClipManager.sh}" # Clipboard Manager
-              "$mainMod, M, exec, pkill -x rofi || ${./scripts/rofimusic.sh}" # online music
+              "$mainMod SHIFT, M, exec, pkill -x rofi || ${./scripts/rofimusic.sh}" # online music
 
               # Screenshot/Screencapture
               "$mainMod, P, exec, ${./scripts/screenshot.sh} s" # drag to snip an area / click on a window to print it
@@ -388,6 +391,7 @@
               # Functional keybinds
               ",xf86Sleep, exec, systemctl suspend" # Put computer into sleep mode
               ",XF86AudioMicMute,exec,pamixer --default-source -t" # mute mic
+              "$mainMod,M,exec,pamixer --default-source -t" #mute mic 
               ",XF86AudioMute,exec,pamixer -t" # mute audio
               ",XF86AudioPlay,exec,playerctl play-pause" # Play/Pause media
               ",XF86AudioPause,exec,playerctl play-pause" # Play/Pause media
@@ -487,8 +491,8 @@
           monitor=,preferred,auto,1
 
 	  #discord screen share broken,10 bit
-          monitor=desc:LG Electronics LG ULTRAGEAR 104NTVS42871,2560x1440@144.0,0x0,1,bitdepth,8,cm,auto
-          monitor=desc:LG Electronics LG ULTRAGEAR 104NTNH42959,2560x1440@144.0,2560x0,1,bitdepth,8,cm,auto
+          monitor=desc:LG Electronics LG ULTRAGEAR 104NTVS42871,2560x1440@144.0,0x0,1,bitdepth,8,cm,srgb
+          monitor=desc:LG Electronics LG ULTRAGEAR 104NTNH42959,2560x1440@144.0,2560x0,1,bitdepth,8,cm,srgb
 
           # Binds workspaces to my monitors only (find desc with: hyprctl monitors)
           workspace=1,monitor:desc:LG Electronics LG ULTRAGEAR 104NTVS42871,default:true
