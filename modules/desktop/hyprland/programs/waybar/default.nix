@@ -24,9 +24,8 @@
             margin-bottom = 0;
 
             modules-left = ["hyprland/workspaces" "cava"];
-            # modules-center = ["clock" "custom/notification"];
-            modules-center = ["mpris" "idle_inhibitor" "clock"];
-            modules-right = ["network" "custom/gpuinfo" "cpu" "memory" "backlight" "pulseaudio" "pulseaudio#microphone" "bluetooth" "tray" "battery"];
+            modules-center = ["idle_inhibitor" "clock"];
+            modules-right = ["network" "custom/gpuinfo" "cpu" "memory" "backlight" "bluetooth" "pulseaudio" "pulseaudio#microphone" "tray" "battery"];
 
             "custom/notification" = {
               tooltip = false;
@@ -84,7 +83,6 @@
               format = "{}";
             };
             "mpris" = {
-              # format = "{player_icon} {title} - {artist}";
               format = "{player_icon} {title}";
               format-paused = "{status_icon} <i>{title} - {artist}</i>";
               player-icons = {
@@ -152,8 +150,7 @@
 
             "clock" = {
               interval = 1;
-              format = "{:%d/%m %H:%M}";
-              # format = "{:%R 󰃭 %d·%m·%y}";
+              format = "{:%d %B %Y %H:%M}";
               format-alt = "{:%H:%M:%S}";
               tooltip-format = "<tt>{calendar}</tt>";
               calendar = {
