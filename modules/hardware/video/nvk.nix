@@ -1,5 +1,6 @@
 # This module uses nouveau with NVK which is the nvidia open-source user-space driver and is not recommended to use as of 30/05/24 since it's unstable
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   env = {
     NVK_I_WANT_A_BROKEN_VULKAN_DRIVER = "1"; # Adds support for my gpu (gtx 1080)
     # MESA_VK_VERSION_OVERRIDE = "1.3";
@@ -11,7 +12,8 @@
     WLR_RENDERER = "vulkan";
     __GL_GSYNC_ALLOWED = "1"; # GSync
   };
-in {
+in
+{
   boot = {
     kernelParams = [
       "nouveau.config=NvGspRm=1"
@@ -19,14 +21,17 @@ in {
       "nouveau.debug=info,VBIOS=info,gsp=debug" # TODO Remove
       # "nouveau.modeset=1"
     ];
-    kernelModules = ["nouveau"];
-    blacklistedKernelModules = ["nvidia" "nvidia_uvm"];
+    kernelModules = [ "nouveau" ];
+    blacklistedKernelModules = [
+      "nvidia"
+      "nvidia_uvm"
+    ];
   };
 
   environment.sessionVariables = env;
   environment.variables = env;
 
-  services.xserver.videoDrivers = ["modesetting"]; # "modesetting" is better than "nouveau"
+  services.xserver.videoDrivers = [ "modesetting" ]; # "modesetting" is better than "nouveau"
   # environment.variables.WLR_NO_HARDWARE_CURSORS = "1";
 
   hardware = {

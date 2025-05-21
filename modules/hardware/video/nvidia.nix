@@ -3,9 +3,11 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   nvidiaDriverChannel = config.boot.kernelPackages.nvidiaPackages.beta; # stable, latest, beta, etc.
-in {
+in
+{
   environment.sessionVariables = lib.optionalAttrs config.programs.hyprland.enable {
     NVD_BACKEND = "direct";
     GBM_BACKEND = "nvidia-drm";
@@ -18,7 +20,7 @@ in {
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"]; # or "nvidiaLegacy470", etc.
+  services.xserver.videoDrivers = [ "nvidia" ]; # or "nvidiaLegacy470", etc.
   boot.kernelParams = lib.optionals (lib.elem "nvidia" config.services.xserver.videoDrivers) [
     "nvidia-drm.modeset=1"
     "nvidia_drm.fbdev=1"
@@ -45,7 +47,8 @@ in {
   };
   nixpkgs.config = {
     nvidia.acceptLicense = true;
-    allowUnfreePredicate = pkg:
+    allowUnfreePredicate =
+      pkg:
       builtins.elem (lib.getName pkg) [
         "cudatoolkit"
         "nvidia-persistenced"
@@ -54,7 +57,9 @@ in {
       ];
   };
   nix.settings = {
-    substituters = ["https://cuda-maintainers.cachix.org"];
-    trusted-public-keys = ["cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="];
+    substituters = [ "https://cuda-maintainers.cachix.org" ];
+    trusted-public-keys = [
+      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+    ];
   };
 }

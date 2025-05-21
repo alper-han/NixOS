@@ -2,8 +2,9 @@
   pkgs,
   terminal,
   ...
-}: {
-  fonts.packages = with pkgs.nerd-fonts; [jetbrains-mono];
+}:
+{
+  fonts.packages = with pkgs.nerd-fonts; [ jetbrains-mono ];
   imports = [
     ../../themes/Catppuccin # Catppuccin GTK and QT themes
     ../hyprland/programs/dunst
@@ -37,12 +38,12 @@
   };
   home-manager.sharedModules = [
     (_: {
-      imports = [./picom.nix];
+      imports = [ ./picom.nix ];
       xsession.windowManager.i3 = {
         enable = true;
         package = pkgs.i3-gaps;
         config = {
-          floating.criteria = [{class = "^Mpv$";}];
+          floating.criteria = [ { class = "^Mpv$"; } ];
           gaps.smartBorders = "on";
           window.titlebar = false;
           window.hideEdgeBorders = "both";
@@ -53,7 +54,7 @@
           keybindings = import ./keybindings.nix {
             inherit pkgs terminal;
           };
-          bars = [];
+          bars = [ ];
           startup = [
             {
               command = "systemctl --user restart picom";

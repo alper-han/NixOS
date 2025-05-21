@@ -3,7 +3,8 @@
   pkgs,
   terminalFileManager,
   ...
-}: {
+}:
+{
   home-manager.sharedModules = [
     (_: {
       xdg.configFile."zsh/.p10k.zsh".source = ./.p10k.zsh;

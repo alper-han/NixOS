@@ -3,20 +3,23 @@
   lib,
   terminal,
   ...
-}: {
+}:
+{
   home-manager.sharedModules = [
     (_: {
-      programs.rofi = let
-        inherit (lib) getExe;
-      in {
-        enable = true;
-        package = pkgs.rofi-wayland;
-        terminal = "${getExe pkgs.${terminal}}";
-        plugins = with pkgs; [
-          rofi-emoji-wayland # https://github.com/Mange/rofi-emoji 🤯
-          rofi-games # https://github.com/Rolv-Apneseth/rofi-games 🎮
-        ];
-      };
+      programs.rofi =
+        let
+          inherit (lib) getExe;
+        in
+        {
+          enable = true;
+          package = pkgs.rofi-wayland;
+          terminal = "${getExe pkgs.${terminal}}";
+          plugins = with pkgs; [
+            rofi-emoji-wayland # https://github.com/Mange/rofi-emoji 🤯
+            rofi-games # https://github.com/Rolv-Apneseth/rofi-games 🎮
+          ];
+        };
       xdg.configFile."rofi/config-music.rasi".source = ./config-music.rasi;
       xdg.configFile."rofi/config-long.rasi".source = ./config-long.rasi;
       xdg.configFile."rofi/config-wallpaper.rasi".source = ./config-wallpaper.rasi;

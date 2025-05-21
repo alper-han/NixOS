@@ -1,17 +1,17 @@
-{pkgs, ...}: let
-  dreamsofcode-io-catppuccin-tmux =
-    pkgs.tmuxPlugins.mkTmuxPlugin
-    {
-      pluginName = "catppuccin";
-      version = "unstable-2023-01-06";
-      src = pkgs.fetchFromGitHub {
-        owner = "dreamsofcode-io";
-        repo = "catppuccin-tmux";
-        rev = "b4e0715356f820fc72ea8e8baf34f0f60e891718";
-        sha256 = "sha256-FJHM6LJkiAwxaLd5pnAoF3a7AE1ZqHWoCpUJE0ncCA8=";
-      };
+{ pkgs, ... }:
+let
+  dreamsofcode-io-catppuccin-tmux = pkgs.tmuxPlugins.mkTmuxPlugin {
+    pluginName = "catppuccin";
+    version = "unstable-2023-01-06";
+    src = pkgs.fetchFromGitHub {
+      owner = "dreamsofcode-io";
+      repo = "catppuccin-tmux";
+      rev = "b4e0715356f820fc72ea8e8baf34f0f60e891718";
+      sha256 = "sha256-FJHM6LJkiAwxaLd5pnAoF3a7AE1ZqHWoCpUJE0ncCA8=";
     };
-in {
+  };
+in
+{
   home-manager.sharedModules = [
     (_: {
       programs.tmux = {
@@ -27,32 +27,32 @@ in {
           sensible
           vim-tmux-navigator
           /*
-             {
-            plugin = resurrect;
-            extraConfig =
-              ''
-                set -g @resurrect-strategy-vim 'session'
-                set -g @resurrect-strategy-nvim 'session'
-                set -g @resurrect-capture-pane-contents 'on'
-              ''
-              + ''
-                # Taken from https://github.com/hmajid2301/dotfiles/blob/main/modules/home/cli/multiplexers/tmux/default.nix#L109
-                # Which was taken from: https://github.com/p3t33/nixos_flake/blob/5a989e5af403b4efe296be6f39ffe6d5d440d6d6/home/modules/tmux.nix
+               {
+              plugin = resurrect;
+              extraConfig =
+                ''
+                  set -g @resurrect-strategy-vim 'session'
+                  set -g @resurrect-strategy-nvim 'session'
+                  set -g @resurrect-capture-pane-contents 'on'
+                ''
+                + ''
+                  # Taken from https://github.com/hmajid2301/dotfiles/blob/main/modules/home/cli/multiplexers/tmux/default.nix#L109
+                  # Which was taken from: https://github.com/p3t33/nixos_flake/blob/5a989e5af403b4efe296be6f39ffe6d5d440d6d6/home/modules/tmux.nix
 
-                resurrect_dir="$XDG_CACHE_HOME/tmux/resurrect"
-                set -g @resurrect-dir $resurrect_dir
-                set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | ${moreutils}/bin/sponge $target'
+                  resurrect_dir="$XDG_CACHE_HOME/tmux/resurrect"
+                  set -g @resurrect-dir $resurrect_dir
+                  set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | ${moreutils}/bin/sponge $target'
+                '';
+            }
+            {
+              plugin = continuum;
+              extraConfig = ''
+                set -g @continuum-restore 'on'
+                set -g @continuum-boot 'on'
+                set -g @continuum-save-interval '10'
+                set -g @continuum-systemd-start-cmd 'start-server'
               '';
-          }
-          {
-            plugin = continuum;
-            extraConfig = ''
-              set -g @continuum-restore 'on'
-              set -g @continuum-boot 'on'
-              set -g @continuum-save-interval '10'
-              set -g @continuum-systemd-start-cmd 'start-server'
-            '';
-          }
+            }
           */
         ];
         extraConfig = ''

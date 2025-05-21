@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   lock-false = {
     Value = false;
     Status = "locked";
@@ -11,7 +12,8 @@
     Value = true;
     Status = "locked";
   };
-in {
+in
+{
   home-manager.sharedModules = [
     (_: {
       programs = {
@@ -161,9 +163,7 @@ in {
                 };
               };
 
-              /*
-              ---- PREFERENCES ----
-              */
+              # ---- PREFERENCES ----
               # Set preferences shared by all profiles.
               Preferences = {
                 # enable custom userchrome
@@ -350,7 +350,7 @@ in {
                   currentVersion = 20;
                   newElementCount = 7;
                   placements = {
-                    widget-overflow-fixed-list = [];
+                    widget-overflow-fixed-list = [ ];
                     unified-extensions-area = [
                       "ublock0_raymondhill_net-browser-action"
                       "firemonkey_eros_man-browser-action"
@@ -374,23 +374,24 @@ in {
                       # "queryamoid_kaply_com-browser-action"
                       # "_aecec67f-0d10-4fa7-b7c7-609a2db280cf_-browser-action"
                     ];
-                    toolbar-menubar = ["menubar-items"];
+                    toolbar-menubar = [ "menubar-items" ];
                     TabsToolbar = [
                       "firefox-view-button"
                       "tabbrowser-tabs"
                       "new-tab-button"
                       "alltabs-button"
                     ];
-                    PersonalToolbar = ["personal-bookmarks" "managed-bookmarks"];
+                    PersonalToolbar = [
+                      "personal-bookmarks"
+                      "managed-bookmarks"
+                    ];
                   };
                 };
               };
             };
           };
 
-          /*
-          ---- PROFILES ----
-          */
+          # ---- PROFILES ----
           # Switch profiles via about:profiles page.
           # For options that are available in Home-Manager see
           # https://nix-community.github.io/home-manager/options.html#opt-programs.firefox.profiles
@@ -408,7 +409,7 @@ in {
                 sponsorblock
                 return-youtube-dislikes
               ];
-              settings = {};
+              settings = { };
               bookmarks = [
                 {
                   name = "Bookmarks Toolbar";
@@ -505,7 +506,7 @@ in {
                       }
                     ];
                     icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                    definedAliases = ["@sp"];
+                    definedAliases = [ "@sp" ];
                   };
                   "Brave" = {
                     urls = [
@@ -519,13 +520,13 @@ in {
                         ];
                       }
                     ];
-                    definedAliases = ["@br"];
+                    definedAliases = [ "@br" ];
                   };
                   "Searx" = {
-                    urls = [{template = "https://searx.aicampground.com/?q={searchTerms}";}];
+                    urls = [ { template = "https://searx.aicampground.com/?q={searchTerms}"; } ];
                     iconUpdateURL = "https://nixos.wiki/favicon.png";
                     updateInterval = 24 * 60 * 60 * 1000; # every day
-                    definedAliases = ["@sx"];
+                    definedAliases = [ "@sx" ];
                   };
                   "NixOS Packages" = {
                     urls = [
@@ -544,7 +545,7 @@ in {
                       }
                     ];
                     icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                    definedAliases = ["@np"];
+                    definedAliases = [ "@np" ];
                   };
                   "NixOS Options" = {
                     urls = [
@@ -563,16 +564,16 @@ in {
                       }
                     ];
                     icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                    definedAliases = ["@no"];
+                    definedAliases = [ "@no" ];
                   };
                   "NixOS Wiki" = {
-                    urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
+                    urls = [ { template = "https://nixos.wiki/index.php?search={searchTerms}"; } ];
                     iconUpdateURL = "https://nixos.wiki/favicon.png";
                     updateInterval = 24 * 60 * 60 * 1000; # every day
-                    definedAliases = ["@nw"];
+                    definedAliases = [ "@nw" ];
                   };
                   "Home Manager Options" = {
-                    urls = [{template = "https://home-manager-options.extranix.com/?query={searchTerms}";}];
+                    urls = [ { template = "https://home-manager-options.extranix.com/?query={searchTerms}"; } ];
                     # urls = [
                     #   {
                     #     template = "https://mipmip.github.io/home-manager-option-search";
@@ -586,7 +587,7 @@ in {
                     # ];
                     iconUpdateURL = "https://avatars.githubusercontent.com/u/33221035";
                     updateInterval = 24 * 60 * 60 * 1000; # Update every day.
-                    definedAliases = ["@hm"];
+                    definedAliases = [ "@hm" ];
                   };
                   "Bing".metaData.hidden = true;
                   "Ebay".metaData.hidden = true;
