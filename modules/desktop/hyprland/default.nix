@@ -319,7 +319,7 @@
 
                 # Games
                 "syncfullscreen,tag:games"
-                "fullscreen,tag:games"
+                # "fullscreen,tag:games" # Bannerlord launcher is causing problem
                 "noborder 1,tag:games"
                 "noshadow,tag:games"
                 "noblur,tag:games"

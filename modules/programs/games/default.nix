@@ -46,9 +46,8 @@
           };
         };
         settings = {
-          no_display = true; # Hide hud by default (Show by holding right-shift then press F12)
+          no_display = false; # Hide hud by default (Show by holding right-shift then press F12)
           fps_limit = [
-            60
             144
             0
           ];

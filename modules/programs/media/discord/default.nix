@@ -3,9 +3,12 @@
   home-manager.sharedModules = [
     (_: {
       home.packages = with pkgs; [
-        (discord.override {
-          withVencord = true;
-        })
+        # (discord.override {
+        #   withVencord = true;
+        # })
+        vesktop 
+        # Vesktop - Best solution for screen sharing issues and Krisp solution
+        # It will import vencord settings when installed.
       ];
       xdg.configFile."Vencord/settings/quickCss.css".text = ''
         @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css");
