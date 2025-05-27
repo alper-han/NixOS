@@ -66,6 +66,7 @@
           git
           gh
           htop
+          nvtopPackages.full
           fastfetch
           ffmpeg-full
           libjxl

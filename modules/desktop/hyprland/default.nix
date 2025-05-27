@@ -140,7 +140,7 @@
                 repeat_delay = 300; # or 212
                 repeat_rate = 30;
 
-                follow_mouse = 1;
+                follow_mouse = 1; # high gpu usage
 
                 touchpad.natural_scroll = false;
 
@@ -520,7 +520,7 @@
                         # Easily plug in any monitor
                         monitor=,preferred,auto,1
 
-              	  #discord screen share broken,10 bit
+              	        # Discord screen share broken,10 bit
                         monitor=desc:LG Electronics LG ULTRAGEAR 104NTVS42871,2560x1440@144.0,0x0,1,bitdepth,8,cm,srgb
                         monitor=desc:LG Electronics LG ULTRAGEAR 104NTNH42959,2560x1440@144.0,2560x0,1,bitdepth,8,cm,srgb
 

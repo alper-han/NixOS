@@ -46,14 +46,14 @@
           };
         };
         settings = {
-          no_display = false; # Hide hud by default (Show by holding right-shift then press F12)
+          no_display = true; # Hide hud by default (Show by holding right-shift then press F12)
           fps_limit = [
             144
             0
           ];
           fps_limit_method = "early"; # early = low input lag and cpu usage but less smooth, late = more smooth
           vsync = 2; # https://github.com/flightlessmango/MangoHud#vsync
-          gl_vsync = -1; # https://github.com/flightlessmango/MangoHud#vsync
+          gl_vsync = 1; # https://github.com/flightlessmango/MangoHud#vsync
           # testing for gl_vsync: 1.045
 
           # keybinds

@@ -31,7 +31,7 @@
             modules-left = [
               "custom/icon"
               "hyprland/workspaces"
-              "cava"
+              "hyprland/window"
             ];
             modules-center = [
               "idle_inhibitor"
@@ -50,6 +50,7 @@
               "custom/hyprsunset"
               "tray"
               "battery"
+              "custom/notification"
               "custom/power"
             ];
 
@@ -103,6 +104,8 @@
               exec = "${../../scripts/WaybarCava.sh}";
               format = "{}";
             };
+           
+            # cava > may cause the screen refresh rate to be high
             "cava" = {
               hide_on_silence = false;
               framerate = 60;
@@ -158,7 +161,7 @@
             };
             "temperature" = {
               hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
-              critical-threshold = 83;
+              critical-threshold = 90;
               format = "{icon} {temperatureC}°C";
               format-icons = [
                 ""
@@ -193,8 +196,9 @@
             };
 
             "hyprland/window" = {
-              format = " {}";
+              format = "{}";
               separate-outputs = true;
+              icon = true;
               rewrite = {
                 "harvey@hyprland =(.*)" = "$1 ";
                 "(.*) — Mozilla Firefox" = "$1 󰈹";
@@ -206,7 +210,7 @@
                 "(.*)Spotify Premium" = "Spotify 󰓇";
                 "(.*)Steam" = "Steam 󰓓";
               };
-              max-length = 75;
+              max-length = 60;
             };
 
             "idle_inhibitor" = {
@@ -244,7 +248,7 @@
 
             "cpu" = {
               interval = 5;
-              format = "󰍛 {usage}%";
+              format = "󰍛 {usage}%|{avg_frequency} Ghz";
               format-alt = "{icon0}{icon1}{icon2}{icon3}";
               format-icons = [
                 "▁"
