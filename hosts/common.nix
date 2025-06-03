@@ -59,6 +59,7 @@
         # Packages that don't require configuration. If you're looking to configure a program see the /modules dir
         home.packages = with pkgs; [
           # Applications
+          vlc
 
           # Terminal
           fzf
@@ -99,7 +100,7 @@
   # Bootloader.
   boot = {
     tmp.cleanOnBoot = true;
-    kernelPackages = pkgs.linuxPackages_lqx; # _latest, _zen, _xanmod_latest, _hardened, _rt, _OTHER_CHANNEL, etc.
+    kernelPackages = pkgs.linuxPackages_lqx; # _latest, _zen, _lqx, _xanmod_latest, _hardened, _rt, _OTHER_CHANNEL, etc.
     loader = {
       efi.canTouchEfiVariables = true;
       efi.efiSysMountPoint = "/boot";
