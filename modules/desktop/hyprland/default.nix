@@ -486,6 +486,10 @@
                   "$mainMod CTRL, S, movetoworkspacesilent, special"
                   "$mainMod ALT, S, movetoworkspacesilent, special"
                   "$mainMod, S, togglespecialworkspace,"
+
+                  # OBS 
+                  ",  F9, pass, class:^(com\.obsproject\.Studio)$"
+                  ", F10, pass, class:^(com\.obsproject\.Studio)$"
                 ]
                 ++ (builtins.concatLists (
                   builtins.genList (
