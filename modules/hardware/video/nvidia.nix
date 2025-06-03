@@ -5,7 +5,7 @@
   ...
 }:
 let
-  nvidiaDriverChannel = config.boot.kernelPackages.nvidiaPackages.beta; # stable, latest, beta, etc.
+  nvidiaDriverChannel = config.boot.kernelPackages.nvidiaPackages.latest; # stable, latest, beta, etc.
 in
 {
   environment.sessionVariables = lib.optionalAttrs config.programs.hyprland.enable {
@@ -17,6 +17,7 @@ in
 
     __GL_GSYNC_ALLOWED = "1"; # GSync
     MOZ_DISABLE_RDD_SANDBOX = "1";
+    __EGL_VENDOR_LIBRARY_FILENAMES = "/run/opengl-driver/share/glvnd/egl_vendor.d/10_nvidia.json";
   };
 
   # Load nvidia driver for Xorg and Wayland
@@ -29,7 +30,7 @@ in
     nvidia = {
       open = true;
       # nvidiaPersistenced = true;
-      nvidiaSettings = false;
+      nvidiaSettings = true;
       powerManagement.enable = false; # This can cause sleep/suspend to fail.
       modesetting.enable = true;
       package = nvidiaDriverChannel;
@@ -47,6 +48,7 @@ in
   };
   nixpkgs.config = {
     nvidia.acceptLicense = true;
+    cudaSupport = true;
     allowUnfreePredicate =
       pkg:
       builtins.elem (lib.getName pkg) [
