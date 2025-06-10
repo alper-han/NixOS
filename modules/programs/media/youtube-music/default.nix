@@ -59,6 +59,7 @@
             ambient-mode.enabled = false;
             amuse.enabled = false;
             quality-changer.enabled = true;
+            music-together.enabled = true;
             visualizer = {
               enabled = false;
               type = "vudio";
