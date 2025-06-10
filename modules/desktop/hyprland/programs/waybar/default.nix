@@ -104,7 +104,7 @@
               exec = "${../../scripts/WaybarCava.sh}";
               format = "{}";
             };
-           
+
             # cava > may cause the screen refresh rate to be high
             "cava" = {
               hide_on_silence = false;
@@ -210,7 +210,7 @@
                 "(.*)Spotify Premium" = "Spotify 󰓇";
                 "(.*)Steam" = "Steam 󰓓";
               };
-              max-length = 150;
+              max-length = 140;
             };
 
             "idle_inhibitor" = {

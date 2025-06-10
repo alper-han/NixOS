@@ -487,7 +487,7 @@
                   "$mainMod ALT, S, movetoworkspacesilent, special"
                   "$mainMod, S, togglespecialworkspace,"
 
-                  # OBS 
+                  # OBS
                   ",  F9, pass, class:^(com\.obsproject\.Studio)$"
                   ", F10, pass, class:^(com\.obsproject\.Studio)$"
                 ]

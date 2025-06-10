@@ -6,7 +6,7 @@
         # (discord.override {
         #   withVencord = true;
         # })
-        vesktop 
+        vesktop
         # Vesktop - Best solution for screen sharing issues and Krisp solution
         # It will import vencord settings when installed.
       ];
