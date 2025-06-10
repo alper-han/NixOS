@@ -30,7 +30,7 @@
       flake = false;
     };
     zen-browser = {
-      url = "github:maximoffua/zen-browser.nix";
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvchad4nix = {
@@ -49,8 +49,8 @@
       inherit (self) outputs;
       settings = {
         # User configuration
-        username = "error"; # automatically set with install.sh and live-install.sh
-        editor = "nixvim"; # nixvim, vscode, nvchad, neovim, emacs (WIP)
+        username = "zynix"; # automatically set with install.sh and live-install.sh
+        editor = "vscode"; # nixvim, vscode, nvchad, neovim, emacs (WIP)
         browser = "zen"; # firefox, floorp, zen
         terminal = "kitty"; # kitty, alacritty, wezterm
         terminalFileManager = "yazi"; # yazi or lf
