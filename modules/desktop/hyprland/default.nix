@@ -232,6 +232,7 @@
                 no_donation_nag = true;
               };
               misc = {
+                middle_click_paste = false;
                 disable_hyprland_logo = true;
                 mouse_move_focuses_monitor = true;
                 swallow_regex = "^(Alacritty|kitty)$";
