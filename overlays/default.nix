@@ -13,11 +13,21 @@
     };
 
   # https://wiki.nixos.org/wiki/Overlays
-  modifications = final: _prev: {
+  modifications = final: prev: {
     nur = inputs.nur.overlays.default;
     stable = import inputs.nixpkgs-stable {
       system = final.system;
       config.allowUnfree = true;
+    };
+
+     # ffmpeg = prev.ffmpeg.override {
+     #   withUnfree = true;
+     #   withX265 = true;
+     #   withNvenc = true;
+     # };
+
+    vesktop = prev.vesktop.override {
+      withMiddleClickScroll = true;
     };
   };
 }
