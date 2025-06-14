@@ -47,6 +47,11 @@
         programs.home-manager.enable = true;
 
         xdg.enable = true;
+        xdg.portal = {
+          enable = true;
+          extraPortals = with pkgs; [ xdg-desktop-portal-hyprland xdg-desktop-portal-gtk ];
+          xdgOpenUsePortal = true;
+        };
         home.username = username;
         home.homeDirectory = if pkgs.stdenv.isDarwin then "/Users/${username}" else "/home/${username}";
         home.stateVersion = "25.05"; # Please read the comment before changing.
@@ -155,10 +160,6 @@
     #sudo.wheelNeedsPassword = false;
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-  };
 
   # Enable dconf for home-manager
   programs.dconf.enable = true;
