@@ -31,11 +31,10 @@
             modules-left = [
               "custom/icon"
               "hyprland/workspaces"
-              "idle_inhibitor"
-              "clock"
             ];
             modules-center = [
-              "hyprland/window"
+              "idle_inhibitor"
+              "clock"
             ];
             modules-right = [
               "network"
@@ -210,7 +209,7 @@
                 "(.*)Spotify Premium" = "Spotify 󰓇";
                 "(.*)Steam" = "Steam 󰓓";
               };
-              max-length = 140;
+              max-length = 100;
             };
 
             "idle_inhibitor" = {
