@@ -92,8 +92,8 @@
             settings = {
               "$mainMod" = "SUPER";
               "$term" = "${getExe pkgs.${terminal}}";
-              "$editor" = "code --disable-gpu";
-              "$fileManager" = "$term --class \"terminalFileManager\" -e ${terminalFileManager}";
+              "$editor" = "kate"; # "code --disable-gpu";
+              "$fileManager" = "thunar";  # "$term --class \"terminalFileManager\" -e ${terminalFileManager}";
               "$browser" = browser;
 
               env = [
