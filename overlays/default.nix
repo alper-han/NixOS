@@ -26,6 +26,8 @@
      #   withNvenc = true;
      # };
 
+    electron = prev.electron_36;
+
     vesktop = prev.vesktop.override {
       withMiddleClickScroll = true;
     };
