@@ -17,6 +17,8 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-index-database.nixosModules.nix-index
+    ./bufferbloat.nix
+    ./network.nix
   ];
 
   programs.nix-index-database.comma.enable = true;
@@ -65,6 +67,8 @@
         home.packages = with pkgs; [
           # Applications
           vlc
+          kdePackages.gwenview
+          kdePackages.kimageformats # gwenview jxl support
 
           # Terminal
           fzf
@@ -213,6 +217,14 @@
       ];
     };
   };
+
+  # Enable ZRAM SWAP
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50;
+    algorithm = "zstd";
+  };
+
 
   # Setup keyring
   services.gnome.gnome-keyring.enable = true;
