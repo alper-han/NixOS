@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 {
   fonts.packages = with pkgs.nerd-fonts; [ jetbrains-mono ];
   home-manager.sharedModules = [
@@ -160,7 +156,7 @@
 
             selection = {
               save_to_clipboard = false;
-              semantic_escape_chars = ",│`|:\"' ()[]{}<>\t";
+              semantic_escape_chars = '',│`|:"' ()[]{}<>	'';
             };
 
             scrolling = {

@@ -1,8 +1,4 @@
-{
-  inputs,
-  settings,
-  ...
-}:
+{ inputs, settings, ... }:
 {
   # Overlay custom derivations into nixpkgs so you can use pkgs.<name>
   additions =
@@ -20,16 +16,14 @@
       config.allowUnfree = true;
     };
 
-     # ffmpeg = prev.ffmpeg.override {
-     #   withUnfree = true;
-     #   withX265 = true;
-     #   withNvenc = true;
-     # };
+    # ffmpeg = prev.ffmpeg.override {
+    #   withUnfree = true;
+    #   withX265 = true;
+    #   withNvenc = true;
+    # };
 
     electron = prev.electron_36;
 
-    vesktop = prev.vesktop.override {
-      withMiddleClickScroll = true;
-    };
+    vesktop = prev.vesktop.override { withMiddleClickScroll = true; };
   };
 }

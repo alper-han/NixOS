@@ -4,7 +4,10 @@ let
     f:
     let
       jsonFile =
-        pkgs.runCommand "lazygit yaml to attribute set" { nativeBuildInputs = [ pkgs.jc ]; } # bash
+        pkgs.runCommand "lazygit yaml to attribute set"
+          {
+            nativeBuildInputs = [ pkgs.jc ];
+          } # bash
 
           ''
             jc --yaml < "${f}" > "$out"

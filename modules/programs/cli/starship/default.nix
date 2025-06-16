@@ -10,7 +10,7 @@
           format = "$username$hostname$directory$git_branch$git_state$git_status$cmd_duration$python$nix_shell$character";
           directory.style = "blue";
           /*
-               username = {
+            username = {
               style_user = "green bold";
               style_root = "red bold";
               format = "[$user]($style)";
@@ -40,7 +40,7 @@
             stashed = "≡";
           };
           git_state = {
-            format = ''\([$state( $progress_current/$progress_total)]($style)\) '';
+            format = "\\([$state( $progress_current/$progress_total)]($style)\\) ";
             style = "bright-black";
           };
           cmd_duration = {

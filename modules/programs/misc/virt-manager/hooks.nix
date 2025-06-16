@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 {
   virtualisation.libvirtd.hooks.qemu = {
     "passthrough" = lib.getExe (

@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 let
   lock-false = {
     Value = false;
@@ -523,7 +519,11 @@ in
                     definedAliases = [ "@br" ];
                   };
                   "Searx" = {
-                    urls = [ { template = "https://searx.aicampground.com/?q={searchTerms}"; } ];
+                    urls = [
+                      {
+                        template = "https://searx.aicampground.com/?q={searchTerms}";
+                      }
+                    ];
                     iconUpdateURL = "https://nixos.wiki/favicon.png";
                     updateInterval = 24 * 60 * 60 * 1000; # every day
                     definedAliases = [ "@sx" ];
@@ -567,13 +567,21 @@ in
                     definedAliases = [ "@no" ];
                   };
                   "NixOS Wiki" = {
-                    urls = [ { template = "https://nixos.wiki/index.php?search={searchTerms}"; } ];
+                    urls = [
+                      {
+                        template = "https://nixos.wiki/index.php?search={searchTerms}";
+                      }
+                    ];
                     iconUpdateURL = "https://nixos.wiki/favicon.png";
                     updateInterval = 24 * 60 * 60 * 1000; # every day
                     definedAliases = [ "@nw" ];
                   };
                   "Home Manager Options" = {
-                    urls = [ { template = "https://home-manager-options.extranix.com/?query={searchTerms}"; } ];
+                    urls = [
+                      {
+                        template = "https://home-manager-options.extranix.com/?query={searchTerms}";
+                      }
+                    ];
                     # urls = [
                     #   {
                     #     template = "https://mipmip.github.io/home-manager-option-search";

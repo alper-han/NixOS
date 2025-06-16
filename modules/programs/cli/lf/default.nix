@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 {
   home-manager.sharedModules = [
     (_: {
@@ -55,7 +51,7 @@
             gt = "cd ~/.local/share/Trash/files";
           };
           commands = {
-            open-with-editor = ''$$EDITOR $f'';
+            open-with-editor = "$$EDITOR $f";
             dragon-out = ''%${getExe pkgs.xdragon} -a -x "$fx"'';
             mkdir = ''
               ''${{

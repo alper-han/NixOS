@@ -51,7 +51,10 @@
         xdg.enable = true;
         xdg.portal = {
           enable = true;
-          extraPortals = with pkgs; [ xdg-desktop-portal-hyprland xdg-desktop-portal-gtk ];
+          extraPortals = with pkgs; [
+            xdg-desktop-portal-hyprland
+            xdg-desktop-portal-gtk
+          ];
           xdgOpenUsePortal = true;
         };
         home.username = username;
@@ -164,7 +167,6 @@
     #sudo.wheelNeedsPassword = false;
   };
 
-
   # Enable dconf for home-manager
   programs.dconf.enable = true;
 
@@ -224,7 +226,6 @@
     memoryPercent = 50;
     algorithm = "zstd";
   };
-
 
   # Setup keyring
   services.gnome.gnome-keyring.enable = true;
@@ -330,7 +331,7 @@
 
   # Enable the OpenSSH daemon.
   /*
-       services.openssh = {
+    services.openssh = {
       enable = true;
       settings = {
         PasswordAuthentication = true;

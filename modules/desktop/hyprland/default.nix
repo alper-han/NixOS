@@ -93,7 +93,7 @@
               "$mainMod" = "SUPER";
               "$term" = "${getExe pkgs.${terminal}}";
               "$editor" = "kate"; # "code --disable-gpu";
-              "$fileManager" = "thunar";  # "$term --class \"terminalFileManager\" -e ${terminalFileManager}";
+              "$fileManager" = "thunar"; # "$term --class \"terminalFileManager\" -e ${terminalFileManager}";
               "$browser" = browser;
 
               env = [
@@ -313,7 +313,7 @@
 
                 "content game, tag:games"
                 "tag +games, content:game"
-                "tag +games, class:^(steam_app.*|steam_app_\d+)$"
+                "tag +games, class:^(steam_app.*|steam_app_d+)$"
                 "tag +games, class:^(gamescope)$"
                 "tag +games, class:(Waydroid)"
                 "tag +games, class:(osu!)"
@@ -489,8 +489,8 @@
                   "$mainMod, S, togglespecialworkspace,"
 
                   # OBS
-                  ",  F9, pass, class:^(com\.obsproject\.Studio)$"
-                  ", F10, pass, class:^(com\.obsproject\.Studio)$"
+                  ",  F9, pass, class:^(com.obsproject.Studio)$"
+                  ", F10, pass, class:^(com.obsproject.Studio)$"
                 ]
                 ++ (builtins.concatLists (
                   builtins.genList (

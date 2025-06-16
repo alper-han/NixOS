@@ -27,7 +27,7 @@ in
           sensible
           vim-tmux-navigator
           /*
-               {
+            {
               plugin = resurrect;
               extraConfig =
                 ''

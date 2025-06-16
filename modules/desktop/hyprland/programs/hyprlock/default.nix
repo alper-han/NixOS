@@ -18,10 +18,10 @@
               new_optimizations = true;
               blur_size = 3;
               blur_passes = 2;
-              noise = 0.0117;
-              contrast = 1.000;
-              brightness = 1.0000;
-              vibrancy = 0.2100;
+              noise = 1.17e-2;
+              contrast = 1.0;
+              brightness = 1.0;
+              vibrancy = 0.21;
               vibrancy_darkness = 0.0;
             }
           ];
@@ -62,7 +62,7 @@
             }
             {
               monitor = "";
-              text = "<span text_transform=\"capitalize\" size=\"larger\">$USER!</span>";
+              text = ''<span text_transform="capitalize" size="larger">$USER!</span>'';
               color = "rgb(198, 160, 246)";
               font_size = 20;
               font_family = "JetBrains Mono Nerd Font 10";
@@ -81,7 +81,7 @@
               valign = "bottom";
             }
             /*
-                 {
+              {
                 monitor = "";
                 text = "Enter your password to unlock.";
                 color = "rgb(198, 160, 246)";

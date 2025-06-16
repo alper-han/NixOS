@@ -1,7 +1,4 @@
-{
-  pkgs,
-  terminal,
-}:
+{ pkgs, terminal }:
 let
   mod = "Mod4";
   alt = "Mod1";

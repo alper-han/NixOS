@@ -13,21 +13,13 @@
         "aarch64-darwin"
       ];
       forEachSupportedSystem =
-        f:
-        nixpkgs.lib.genAttrs supportedSystems (
-          system:
-          f {
-            pkgs = import nixpkgs { inherit system; };
-          }
-        );
+        f: nixpkgs.lib.genAttrs supportedSystems (system: f { pkgs = import nixpkgs { inherit system; }; });
     in
     {
       devShells = forEachSupportedSystem (
         { pkgs }:
         {
-          default = pkgs.mkShell {
-            packages = with pkgs; [ ruby_3_2 ];
-          };
+          default = pkgs.mkShell { packages = with pkgs; [ ruby_3_2 ]; };
         }
       );
     };

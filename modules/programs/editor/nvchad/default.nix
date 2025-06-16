@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 {
   home-manager.sharedModules = [
     (_: {
@@ -24,7 +20,7 @@
           # dockerfile-language-server-nodejs
           # emmet-language-server
           /*
-             (python3.withPackages (ps:
+            (python3.withPackages (ps:
             with ps; [
               python-lsp-server
               flake8

@@ -36,7 +36,7 @@
       no-fading-openclose = false;
 
       # Dim inactive windows. (0.0 - 1.0)
-      inactive-dim = 0.03;
+      inactive-dim = 3.0e-2;
 
       # Do not let dimness adjust based on window opacity.
       inactive-dim-fixed = true;

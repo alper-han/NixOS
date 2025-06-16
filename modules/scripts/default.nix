@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 let
   # Recursively find all .nix files in the current directory and subdirectories
   # Ignores default.nix only at the top level

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 pkgs.writeShellScriptBin "tmux-sessionizer" ''
   tmux="${pkgs.tmux}/bin/tmux"
   fzf="${pkgs.fzf}/bin/fzf"

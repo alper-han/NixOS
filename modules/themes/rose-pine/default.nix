@@ -1,8 +1,4 @@
-{
-  pkgs,
-  wallpaper,
-  ...
-}:
+{ pkgs, wallpaper, ... }:
 let
   # Choose the desired variant: "main", "moon", or "dawn"
   variant = "main";

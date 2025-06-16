@@ -46,7 +46,7 @@
             };
             "menubar#desktop" = {
               "menu#screenshot" = {
-                label = "\t󰄀   Screenshot\t";
+                label = "	󰄀   Screenshot	";
                 position = "left";
                 actions = [
                   {
@@ -60,7 +60,7 @@
                 ];
               };
               "menu#power" = {
-                label = "\t   Power Menu\t  ";
+                label = "	   Power Menu	  ";
                 position = "left";
                 actions = [
                   {

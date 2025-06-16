@@ -1,8 +1,4 @@
-{
-  pkgs,
-  wallpaper,
-  ...
-}:
+{ pkgs, wallpaper, ... }:
 let
   variant = "mocha";
   accent = "mauve";

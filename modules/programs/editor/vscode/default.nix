@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "vscode" ];
   home-manager.sharedModules = [
@@ -125,9 +121,7 @@
             "C_Cpp.vcFormat.indent.caseLabels" = true;
             "C_Cpp.intelliSenseCacheSize" = 2048;
             "C_Cpp.intelliSenseMemoryLimit" = 2048;
-            "C_Cpp.default.browse.path" = [
-              ''''${workspaceFolder}/**''
-            ];
+            "C_Cpp.default.browse.path" = [ "\${workspaceFolder}/**" ];
             "C_Cpp.default.cStandard" = "gnu11";
             "C_Cpp.inlayHints.parameterNames.hideLeadingUnderscores" = false;
             "C_Cpp.intelliSenseUpdateDelay" = 500;
@@ -245,7 +239,7 @@
                 "commands" = [ "editor.action.quickFix" ];
               }
               /*
-                  {
+                {
                   "before" = [":"];
                   "commands" = ["workbench.action.showCommands"];
                 }

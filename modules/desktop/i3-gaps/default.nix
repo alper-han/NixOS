@@ -1,8 +1,4 @@
-{
-  pkgs,
-  terminal,
-  ...
-}:
+{ pkgs, terminal, ... }:
 {
   fonts.packages = with pkgs.nerd-fonts; [ jetbrains-mono ];
   imports = [
@@ -51,9 +47,7 @@
             inner = 4;
             outer = 6;
           };
-          keybindings = import ./keybindings.nix {
-            inherit pkgs terminal;
-          };
+          keybindings = import ./keybindings.nix { inherit pkgs terminal; };
           bars = [ ];
           startup = [
             {

@@ -106,7 +106,11 @@
       };
       "Home Manager" = {
         inherit icon;
-        urls = [ { template = "https://home-manager-options.extranix.com/?query={searchTerms}"; } ];
+        urls = [
+          {
+            template = "https://home-manager-options.extranix.com/?query={searchTerms}";
+          }
+        ];
         # urls = [
         #   {
         #     template = "https://mipmip.github.io/home-manager-option-search";

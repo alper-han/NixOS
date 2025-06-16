@@ -1,7 +1,4 @@
-{
-  stdenv,
-  fetchFromGitHub,
-}:
+{ stdenv, fetchFromGitHub }:
 stdenv.mkDerivation rec {
   pname = "sddm-tokyo-night-theme";
   version = "320c8e74ade1e94f640708eee0b9a75a395697c6";
